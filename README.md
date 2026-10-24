@@ -81,18 +81,11 @@ BuildingDepot/
 │   ├── CentralService/            # REST API + auth (gunicorn, 8081)
 │   ├── DataService/               # timeseries read/write (gunicorn, 8082)
 │   └── CentralReplica/            # shared XML-RPC authority (8080)
-├── legacy_scripts/                # superseded baremetal installer
-└── configs/, pip_packages.list, Dockerfile, script_for_github_actions.sh, setup_bd.py, env.sample
+└── configs/, pip_packages.list, Dockerfile
 ```
 
-The legacy baremetal installer (`legacy_scripts/install.sh`, `setup_bd.py`,
-`env.sample`, `configs/`) and the baremetal CI (`script_for_github_actions.sh`,
-`.github/workflows/test_bd.yml`) predate the current deploy path and **no longer
-work** — see the TODO at the top of the workflow.
-
-Do not run `legacy_scripts/install.sh` on a configured host: its line
-`cp env.sample .env` overwrites the real `.env` with the two stale `BD_SETTINGS`
-paths, taking every secret with it.
+The legacy baremetal installer configs (`configs/`) predate the current deploy
+path and **no longer work**.
 
 License
 =======
