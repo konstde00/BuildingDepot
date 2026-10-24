@@ -85,6 +85,8 @@ class Token(Document):
     _scopes = StringField()
     email = StringField()
 
+    meta = {"indexes": [{"fields": ["expires"], "expireAfterSeconds": 0}]}
+
     @property
     def scopes(self):
         if self._scopes:
