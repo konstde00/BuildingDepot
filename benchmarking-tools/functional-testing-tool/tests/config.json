@@ -1,6 +1,6 @@
 {
-  "centralServiceUri": "http://127.0.0.1:81",
-  "dataServiceUri": "http://127.0.0.1:82",
+  "centralServiceUri": "http://127.0.0.1:8081",
+  "dataServiceUri": "http://127.0.0.1:8082",
   "clientID": "",
   "clientSecret": "",
   "email": "admin@buildingdepot.org",
