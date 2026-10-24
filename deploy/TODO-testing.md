@@ -2,11 +2,11 @@
 
 ## Unit-level (no target host needed)
 
-- [ ] Config loading: import `buildingdepot/bd_config.py` with a complete `.env`
+- [x] Config loading: import `buildingdepot/bd_config.py` with a complete `.env`
       and verify every key in `CONFIG`. Then blank `REDIS_PWD` and verify the
       import raises naming the key and the file. Then set `REDIS_PWD` in the
       process environment and verify it wins over the file.
-- [ ] `BD_ENV` override: point it at a scratch env file, verify `bd_config`
+- [x] `BD_ENV` override: point it at a scratch env file, verify `bd_config`
       reads that instead of the repo-root `.env`.
 - [ ] Config reachability from each working directory: the units run from
       `buildingdepot/` (CS, DS) and `buildingdepot/CentralReplica/` (replica).
@@ -18,7 +18,7 @@
 - [ ] Key-name parity: every `_required`/`_text`/`_number` key in `bd_config.py`
       appears in `.env.example`, and every `${...}` in `deploy/compose.yml`
       resolves from `.env`.
-- [ ] Systemd unit rendering: render `.service.template` files with sample
+- [x] Systemd unit rendering: render `.service.template` files with sample
       `WORKING_DIRECTORY`/`UV_BIN`, verify output is valid systemd unit syntax.
 - [ ] Bootstrap idempotency: run `bootstrap_bare.py` twice against a test
       mongo. Second run prints "already exists", upserts ds1 without error.
@@ -28,7 +28,7 @@
       `GET /oauth/access_token/client_id=.../client_secret=...` and check a token
       comes back. Re-run with a changed secret and verify the row updates rather
       than duplicating. Omit both flags and verify it skips cleanly.
-- [ ] `install.py --help` parses without import errors (proves vendoring correct).
+- [x] `install.py --help` parses without import errors (proves vendoring correct).
 
 ## Integration (needs Ubuntu 26.04 host)
 

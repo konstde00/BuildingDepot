@@ -13,6 +13,8 @@ jobs:
       SMTP_PORT: 1025
     steps:
       - uses: actions/checkout@v7
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
       - name: Install uv
         run: pipx install uv
       - name: Install BuildingDepot
